@@ -15,15 +15,6 @@ const getTypeDetails = type => {
     case 'electric':
       return { borderColor: '#FFD700', emoji: '⚡' }
 
-    case 'psychic':
-      return { borderColor: '#FF7043', emoji: '🔮' }
-
-    case 'ice':
-      return { borderColor: '#9ACD32', emoji: '🧊' }
-
-    case 'dragon':
-      return { borderColor: '#6F35FC', emoji: '🐉' }
-
     default:
       return { borderColor: '#A0A0A0', emoji: '❓' }
   }
@@ -110,8 +101,10 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   typeContainer: {
-    marginBottom: 40,
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 40,
   },
   badge: {
     flexDirection: 'row',
@@ -130,7 +123,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   movesContainer: {
-    marginBottom: 16,
+    marginBottom: 12,
   },
   movesText: {
     fontSize: 22,
