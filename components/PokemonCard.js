@@ -1,14 +1,39 @@
-import { Text, View, StyleSheet, Platform } from 'react-native'
-import React, { Component } from 'react'
+import { Text, View, StyleSheet, Platform, Image } from 'react-native'
 
-export default class PokemonCard extends Component {
-  render() {
-    return (
-      <View style={styles.card}>
-        <Text>Pokemon Card</Text>
+export default function PokemonCard({
+  name,
+  image,
+  type,
+  hp,
+  moves,
+  weaknesses,
+}) {
+  return (
+    <View style={styles.card}>
+      <View>
+        <Text>{name}</Text>
+        <Text>{hp}</Text>
       </View>
-    )
-  }
+
+      {/* <Image
+        source={image}
+        style={styles.image}
+        accessibilityLabel={`${name} pokemon`}
+      /> */}
+
+      <View>
+        <Text>Type: {type}</Text>
+      </View>
+
+      <View>
+        <Text>Moves: {moves.join(', ')}</Text>
+      </View>
+
+      <View>
+        <Text>Weakness: {weaknesses.join(', ')}</Text>
+      </View>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
